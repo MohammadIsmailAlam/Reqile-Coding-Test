@@ -11,6 +11,7 @@ import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
 import Registered from "./auth/Registated";
 import ProductListView from "./pages/ProductViewList";
+import ProductDetailView from "./pages/ProductDetailView";
 
 export const userContext = React.createContext(null);
 
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/registered" element={<Registered />} />
             <Route exact path="/productViewList" element={<ProductListView />} />
+            <Route exact path="/productDetailView" element={<ProductDetailView />} />
           </Routes>
         </Router>
       </userContext.Provider>
