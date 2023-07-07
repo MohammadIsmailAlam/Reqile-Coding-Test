@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -18,18 +18,18 @@ const LoginPage = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // Here you can perform your login logic, e.g., send the data to an API
-    console.log('Username:', username);
-    console.log('Password:', password);
+    console.log("Username:", username);
+    console.log("Password:", password);
     // Reset the form
-    setUsername('');
-    setPassword('');
+    setUsername("");
+    setPassword("");
 
     // Navigate to Registered component
-    navigate('/registered', { state: { username } });
+    navigate("/registered", { state: { username } });
   };
 
   const handleSignUpClick = () => {
-    navigate('/signup');
+    navigate("/signup");
   };
 
   return (
@@ -65,7 +65,7 @@ const LoginPage = () => {
           </button>
         </form>
         <p className="text-sm mt-4">
-          Don't have an account?{' '}
+          Don't have an account?{" "}
           <button
             onClick={handleSignUpClick}
             className="text-blue-500 border-none bg-transparent font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:text-blue-600 focus:outline-none"

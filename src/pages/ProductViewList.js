@@ -64,7 +64,7 @@ const ProductListView = () => {
                 </button>
                 <button
                   onClick={() => addToCart(product.id)}
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-green-500 hover:bg-green-700 text-red font-bold py-2 px-4 rounded"
                 >
                   Add to Cart
                 </button>
