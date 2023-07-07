@@ -33,36 +33,45 @@ const LoginPage = () => {
   };
 
   return (
-    <div id="login" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '81vh' }}>
-      <div className="login" style={{ width: '400px', backgroundColor: '#fff', borderRadius: '5px', padding: '30px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '28px', marginBottom: '30px' }}>Login Page</h2>
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-96 bg-white rounded-lg p-6 shadow">
+        <h2 className="text-3xl mb-6">Login Page</h2>
         <form onSubmit={handleFormSubmit}>
-          <div style={{ marginBottom: '15px' }}>
+          <div className="mb-4">
             <input
               type="text"
               id="username"
               value={username}
               onChange={handleUsernameChange}
-              style={{ width: '100%', padding: '10px', border: 'none', borderRadius: '5px', backgroundColor: '#fff', boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)', fontSize: '16px' }}
+              className="w-full px-4 py-2 border rounded-lg bg-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Username"
             />
           </div>
-          <div style={{ marginBottom: '15px' }}>
+          <div className="mb-4">
             <input
               type="password"
               id="password"
               value={password}
               onChange={handlePasswordChange}
-              style={{ width: '100%', padding: '10px', border: 'none', borderRadius: '5px', backgroundColor: '#fff', boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)', fontSize: '16px' }}
+              className="w-full px-4 py-2 border rounded-lg bg-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Password"
             />
           </div>
-          <button type="submit" className="login-btn" style={{ width: '100%', padding: '10px', border: 'none', borderRadius: '10px', backgroundColor: '#f8f9fa', color: '#000000', fontSize: '16px', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white rounded-lg py-2 transition-colors duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          >
             Login
           </button>
         </form>
-        <p className="footer" style={{ fontSize: '14px', margin: '1em' }}>
-          Don't have an account? <button onClick={handleSignUpClick} style={{ color: '#00bcd4', border: 'none', backgroundColor: 'transparent', cursor: 'pointer', transition: 'all 0.3s ease' }}>Sign Up</button>
+        <p className="text-sm mt-4">
+          Don't have an account?{' '}
+          <button
+            onClick={handleSignUpClick}
+            className="text-blue-500 border-none bg-transparent font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:text-blue-600 focus:outline-none"
+          >
+            Sign Up
+          </button>
         </p>
       </div>
     </div>

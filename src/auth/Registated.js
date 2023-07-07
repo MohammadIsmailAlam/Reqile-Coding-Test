@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate,  } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Registered = () => {
   const location = useLocation();
@@ -11,16 +11,16 @@ const Registered = () => {
     navigate('/productViewList');
   };
 
-  const handleProductDetailView = () => {
-    navigate('/productDetailView');
-  };
-
   return (
-    <div>
-      <h2>Registered</h2>
-      <p>Welcome, {username}!</p>
-      <button onClick={handleProductListView}>Product List View</button>
-      <button onClick={handleProductDetailView}>Product Detail View</button>
+    <div className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Registered</h2>
+      <p className="mb-2">Welcome, {username}!</p>
+      <button
+        onClick={handleProductListView}
+        className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+      >
+        Product List View
+      </button>
     </div>
   );
 };

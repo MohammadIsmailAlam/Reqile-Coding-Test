@@ -33,39 +33,39 @@ const ProductListView = () => {
   return (
     <div>
       <header>
-        <nav style={{ background: "lightgray", padding: "10px" }}>
-          <ul
-            style={{
-              display: "flex",
-              listStyleType: "none",
-              justifyContent: "space-between",
-            }}
-          >
+        <nav className="bg-lightgray p-4">
+          <ul className="flex justify-between">
             <li onClick={toggleCartVisibility}>Cart ({cartItems.length})</li>
           </ul>
         </nav>
       </header>
-      <h2>Product List</h2>
-      <table>
+      <h2 className="text-2xl font-bold mb-4">Product List</h2>
+      <table className="w-full">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Actions</th>
+            <th className="px-4 py-2">ID</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Price</th>
+            <th className="px-4 py-2">Actions</th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.price}</td>
-              <td>
-                <button onClick={() => handleViewDetails(product.id)}>
+              <td className="px-4 py-2">{product.id}</td>
+              <td className="px-4 py-2">{product.name}</td>
+              <td className="px-4 py-2">{product.price}</td>
+              <td className="px-4 py-2">
+                <button
+                  onClick={() => handleViewDetails(product.id)}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                >
                   View Details
                 </button>
-                <button onClick={() => addToCart(product.id)}>
+                <button
+                  onClick={() => addToCart(product.id)}
+                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                >
                   Add to Cart
                 </button>
               </td>

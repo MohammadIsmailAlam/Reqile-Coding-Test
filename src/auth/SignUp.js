@@ -37,47 +37,62 @@ const SignupPage = () => {
   };
 
   return (
-    <div id="signup" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '81vh' }}>
-      <div className="signup" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '80%', maxWidth: '500px', backgroundColor: '#fff', padding: '30px', borderRadius: '5px', boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)' }}>
-        <h2 style={{ marginBottom: '2rem', color: '#333', fontSize: '1.8rem' }}>Sign Up Page</h2>
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="signup w-80 max-w-md bg-white p-8 rounded-lg shadow-md">
+        <h2 className="mb-8 text-2xl font-bold text-center">Sign Up Page</h2>
         <form onSubmit={handleFormSubmit}>
-          <div>
-            <label htmlFor="username">Username:</label>
+          <div className="mb-4">
+            <label htmlFor="username" className="block mb-2 font-semibold">
+              Username:
+            </label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={handleUsernameChange}
-              style={{ width: '100%', padding: '10px', margin: '10px 0', border: '1px solid #ccc', borderRadius: '12px', fontSize: '1rem', color: '#333' }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg"
             />
           </div>
-          <div>
-            <label htmlFor="email">Email:</label>
+          <div className="mb-4">
+            <label htmlFor="email" className="block mb-2 font-semibold">
+              Email:
+            </label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={handleEmailChange}
-              style={{ width: '100%', padding: '10px', margin: '10px 0', border: '1px solid #ccc', borderRadius: '12px', fontSize: '1rem', color: '#333' }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg"
             />
           </div>
-          <div>
-            <label htmlFor="password">Password:</label>
+          <div className="mb-6">
+            <label htmlFor="password" className="block mb-2 font-semibold">
+              Password:
+            </label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={handlePasswordChange}
-              style={{ width: '100%', padding: '10px', margin: '10px 0', border: '1px solid #ccc', borderRadius: '12px', fontSize: '1rem', color: '#333' }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg"
             />
           </div>
-          <button type="submit" style={{ backgroundColor: '#00bcd4', color: '#fff', border: 'none', borderRadius: '10px', padding: '10px 20px', marginTop: '20px', fontSize: '1rem', cursor: 'pointer', transition: 'background-color 0.3s ease' }}>
+          <button
+            type="submit"
+            className="w-full py-2 px-4 mt-4 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition duration-300"
+          >
             Sign Up
           </button>
         </form>
-        <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '5px' }}>Error message goes here</p>
-        <div style={{ marginTop: '20px', fontSize: '0.8rem', color: '#333' }}>
-          Already have an account? <button onClick={handleLoginClick} style={{ color: '#00bcd4', border: 'none', backgroundColor: 'transparent', fontWeight: 'bold', cursor: 'pointer', transition: 'color 0.3s ease' }}>Log In</button>
+        <p className="mt-4 text-red-500 text-sm">Error message goes here</p>
+        <div className="mt-6 text-sm text-gray-700">
+          Already have an account?{' '}
+          <button
+            onClick={handleLoginClick}
+            className="font-semibold text-blue-500 border-none bg-transparent cursor-pointer transition-colors duration-300 hover:text-blue-600"
+          >
+            Log In
+          </button>
         </div>
       </div>
     </div>
