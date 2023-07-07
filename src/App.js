@@ -12,13 +12,13 @@ import SignUp from "./auth/SignUp";
 import Registered from "./auth/Registated";
 import ProductListView from "./pages/ProductViewList";
 import ProductDetailView from "./pages/ProductDetailView";
+import CartView from "./cartView/Cart";
 
 export const userContext = React.createContext(null);
 
 function App() {
   const [userEmail, setUserEmail] = useState("");
 
-  
   return (
     <>
       <userContext.Provider value={{ userEmail, setUserEmail }}>
@@ -28,7 +28,8 @@ function App() {
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/registered" element={<Registered />} />
             <Route exact path="/productViewList" element={<ProductListView />} />
-            <Route exact path="/productDetailView" element={<ProductDetailView />} />
+            <Route exact path="/productDetailView/:id" element={<ProductDetailView />} />
+            <Route exact path="/cart" element={<CartView />} />
           </Routes>
         </Router>
       </userContext.Provider>
