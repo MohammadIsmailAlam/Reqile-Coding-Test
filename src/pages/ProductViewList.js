@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import ProductDetailView from './ProductDetailView';
-import Cart from '../cartView/Cart';
+import React, { useState } from "react";
+import ProductDetailView from "./ProductDetailView";
+import Cart from "../cartView/Cart";
 
 const ProductListView = () => {
   const products = [
-    { id: 1, name: 'Product 1', price: 10 },
-    { id: 2, name: 'Product 2', price: 20 },
-    { id: 3, name: 'Product 3', price: 30 },
-    { id: 4, name: 'Product 4', price: 40 },
-    { id: 5, name: 'Product 5', price: 50 },
+    { id: 1, name: "Product 1", price: 10 },
+    { id: 2, name: "Product 2", price: 20 },
+    { id: 3, name: "Product 3", price: 30 },
+    { id: 4, name: "Product 4", price: 40 },
+    { id: 5, name: "Product 5", price: 50 },
   ];
 
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -20,7 +20,9 @@ const ProductListView = () => {
   };
 
   const addToCart = (productId) => {
-    const selectedProduct = products.find((product) => product.id === productId);
+    const selectedProduct = products.find(
+      (product) => product.id === productId
+    );
     setCartItems([...cartItems, selectedProduct]);
   };
 
@@ -31,8 +33,14 @@ const ProductListView = () => {
   return (
     <div>
       <header>
-        <nav style={{ background: 'lightgray', padding: '10px' }}>
-          <ul style={{ display: 'flex', listStyleType: 'none', justifyContent: 'space-between' }}>
+        <nav style={{ background: "lightgray", padding: "10px" }}>
+          <ul
+            style={{
+              display: "flex",
+              listStyleType: "none",
+              justifyContent: "space-between",
+            }}
+          >
             <li onClick={toggleCartVisibility}>Cart ({cartItems.length})</li>
           </ul>
         </nav>
@@ -54,8 +62,12 @@ const ProductListView = () => {
               <td>{product.name}</td>
               <td>{product.price}</td>
               <td>
-                <button onClick={() => handleViewDetails(product.id)}>View Details</button>
-                <button onClick={() => addToCart(product.id)}>Add to Cart</button>
+                <button onClick={() => handleViewDetails(product.id)}>
+                  View Details
+                </button>
+                <button onClick={() => addToCart(product.id)}>
+                  Add to Cart
+                </button>
               </td>
             </tr>
           ))}
@@ -66,7 +78,9 @@ const ProductListView = () => {
           product={products.find((product) => product.id === selectedProductId)}
         />
       )}
-      {isCartVisible && <Cart cartItems={cartItems} />}
+      {isCartVisible && (
+        <Cart cartItems={cartItems} setCartItems={setCartItems} />
+      )}
     </div>
   );
 };

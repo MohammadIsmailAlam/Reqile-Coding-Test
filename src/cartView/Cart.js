@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
+const Cart = ({ cartItems, setCartItems }) => {
   // Function to remove a product from the cart
   const removeProductFromCart = (productId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== productId);
